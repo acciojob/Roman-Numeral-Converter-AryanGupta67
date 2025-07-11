@@ -1,9 +1,7 @@
-// script.js
-
 function convertToRoman(num) {
-  if (num <= 0) return ''; // No Roman numeral for 0 or negative numbers
+  if (num <= 0) return ''; // No Roman numeral for 0 or less
 
-  const romanMap = [
+  const romanSymbols = [
     ['M', 1000],
     ['CM', 900],
     ['D', 500],
@@ -21,7 +19,7 @@ function convertToRoman(num) {
 
   let result = '';
 
-  for (let [symbol, value] of romanMap) {
+  for (let [symbol, value] of romanSymbols) {
     while (num >= value) {
       result += symbol;
       num -= value;
@@ -31,8 +29,9 @@ function convertToRoman(num) {
   return result;
 }
 
-// Sample test cases
-console.log(convertToRoman(14));   // Output: XIV
-console.log(convertToRoman(798));  // Output: DCCXCVIII
+// Sample outputs
+console.log(convertToRoman(14));    // XIV
+console.log(convertToRoman(798));   // DCCXCVIII
+console.log(convertToRoman(100000)); // (prints a long string of Ms)
 
 
