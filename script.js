@@ -1,7 +1,9 @@
-function toRoman(x) {
-  if (x === 0) return ''; // Important: Roman numerals do not represent 0
+// script.js
 
-  const symbols = [
+function convertToRoman(num) {
+  if (num <= 0) return ''; // No Roman numeral for 0 or negative numbers
+
+  const romanMap = [
     ['M', 1000],
     ['CM', 900],
     ['D', 500],
@@ -19,16 +21,18 @@ function toRoman(x) {
 
   let result = '';
 
-  for (let [roman, value] of symbols) {
-    while (x >= value) {
-      result += roman;
-      x -= value;
+  for (let [symbol, value] of romanMap) {
+    while (num >= value) {
+      result += symbol;
+      num -= value;
     }
   }
 
   return result;
 }
 
-// Do NOT console.log here if the platform calls your function automatically
-// The function must return the string only
+// Sample test cases
+console.log(convertToRoman(14));   // Output: XIV
+console.log(convertToRoman(798));  // Output: DCCXCVIII
+
 
