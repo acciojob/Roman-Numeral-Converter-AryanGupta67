@@ -1,5 +1,5 @@
-function convertToRoman(num) {
-  if (num <= 0) return ''; // No Roman numeral for 0 or less
+function romanConverter(num) {
+  if (num === 0) return '';
 
   const romanSymbols = [
     ['M', 1000],
@@ -28,10 +28,4 @@ function convertToRoman(num) {
 
   return result;
 }
-
-// Sample outputs
-console.log(convertToRoman(14));    // XIV
-console.log(convertToRoman(798));   // DCCXCVIII
-console.log(convertToRoman(100000)); // (prints a long string of Ms)
-
 
