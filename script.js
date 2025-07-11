@@ -1,5 +1,5 @@
-function toRoman(num) {
-  if (num <= 0) return ''; // Roman numerals do not represent 0 or negative numbers
+function toRoman(x) {
+  if (x === 0) return ''; // Important: Roman numerals do not represent 0
 
   const symbols = [
     ['M', 1000],
@@ -20,17 +20,15 @@ function toRoman(num) {
   let result = '';
 
   for (let [roman, value] of symbols) {
-    while (num >= value) {
+    while (x >= value) {
       result += roman;
-      num -= value;
+      x -= value;
     }
   }
 
   return result;
 }
 
-// Example usage
-console.log(toRoman(14));   // Output: XIV
-console.log(toRoman(798));  // Output: DCCXCVIII
-console.log(toRoman(0));    // Output: (empty string)
+// Do NOT console.log here if the platform calls your function automatically
+// The function must return the string only
 
